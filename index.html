@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+        integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- titulo -->
+    <title>Previsão do Tempo</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/images/cloud.svg" type="image/x-icon">
+
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/styles/style.css">
+
+</head>
+
+<body>
+    <main>
+        <form class="search" id="search-form">
+            <input type="search" class="search__area" id="search-input" aria-label="Campo para buscar cidade"
+                placeholder="Digite o nome da cidade" required>
+            <button type="submit" class="search__button" id="search-button" aria-label="">
+                <img src="./assets/images/search-icon.svg" alt="" class="search__icon">
+            </button>
+        </form>
+        <section class="weather --hidden" id="weather-container">
+            <div class="weather__localization">
+                <img src="./assets/images/location.svg" class="weather__icon" alt="">
+                <h2 class="weather__city" id="weather-city"></h2>
+            </div>
+
+            <div class="weather__temperature">
+                <h1 class="temperature__degrees" id="degrees"></h1>
+
+                <div class="weather__condition">
+                    <img src="" class="condition__icon" id="cloud-icon"
+                        alt="Imagem representativa das condições do tempo">
+                    <h3 class="condition__text" id="weather-condition"></h3>
+                </div>
+            </div>
+
+            <div class="weather__features">
+                <hr>
+                <div class="weather__climate">
+                    <p class="weather__text">Sensação:</p>
+                    <span class="weather__text" id="weather-feeling"></span>
+                </div>
+                <hr>
+                <div class="weather__climate">
+                    <p class="weather__text">Vento:</p>
+                    <span class="weather__text" id="weather-wind"></span>
+                </div>
+                <hr>
+                <div class="weather__climate">
+                    <p class="weather__text">Umidade:</p>
+                    <span class="weather__text" id="weather-humidity"></span>
+                </div>
+                <hr>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="./assets/js/index.js" type="module"></script>
+
+
+</body>
+
+</html>
