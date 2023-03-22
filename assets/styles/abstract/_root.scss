@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+// mixin
+@mixin text ($size, $weigth, $color) {
+    font-size: $size;
+    font-weight: $weigth;
+    color: $color;
+}
+
+// shadow
+$search-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
+$background-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.25);
+
+// font-weigth
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+// colors 
+$dark-neutral: #000000;
+$silver-neutral: #909090;
+$light-neutral: #FEFEFE;
+$primary: #E3FDFD;
+$secondary: #CBF1F5;
+$tertiary: #A6E3E9;
+$quaternary: #71C9CE;
+
+$gradient: (
+    to bottom,
+    #71C9CE,
+    #E3FDFD
+);
