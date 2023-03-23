@@ -8,14 +8,19 @@ export async function getCoordinates(city) {
 
   const data = await geocodingAPI.json();
 
-  const cityData = {
-    name: data[0].name,
-    country: data[0].country,
-    lat: data[0].lat,
-    lon: data[0].lon,
-  };
-
-  return cityData;
+  if (!data || data.length === 0) {
+    throw new Error(
+      "Cidade não encontrada. Por favor, verifique o nome digitado."
+    );
+  } else {
+    const cityData = {
+      name: data[0].name,
+      country: data[0].country,
+      lat: data[0].lat,
+      lon: data[0].lon,
+    };
+    return cityData;
+  }
 }
 
 export async function getWeather(lat, lon) {

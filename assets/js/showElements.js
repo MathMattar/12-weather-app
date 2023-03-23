@@ -30,5 +30,3 @@ export function showCityImages(images) {
   document.body.style.backgroundSize = "cover";
   document.body.style.backgroundPosition = "center center";
 }
-
-

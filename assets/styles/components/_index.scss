@@ -1,141 +1,135 @@
 @import '../abstract/root';
 
 body {
-    display: flex;
-    justify-content: center;
+    @include display(flex, row, wrap, flex-start, center, normal);
+    @include size (100%, 100vh);
+    @include spacing(6rem 2rem, unset);
     background: linear-gradient($gradient) fixed;
     background-size: 100%;
-    width: 100%;
-    height: 100vh;
-    padding: 18rem 30%;
 
-    main {
-        background-color: $light-neutral;
-        width: fit-content;
-        max-width: 64rem;
-        height: fit-content;
-        max-height: 73.8rem;
-        border: none;
-        border-radius: 4rem;
-        box-shadow: $background-shadow;
-        padding: 6.4rem;
+    header {
+        @include size (100%, fit-content);
 
         .search {
-            display: flex;
-            column-gap: 1.2rem;
+            @include display (flex, row, nowrap, normal, space-between, center);
+            @include size (100%, 100%);
+            @include spacing (0 0 1rem 0, unset);
+            column-gap: 1rem;
 
             .search__area {
-                @include text(2.8rem, $bold, $dark-neutral);
-                width: 100%;
-                background-color: $secondary;
-                border: none;
-                outline: none;
-                border-radius: .8rem;
+                @include text(1.6rem, $medium, $dark);
+                @include border(none, none, 8px);
+                @include size (calc(100% - 5rem), 4rem);
+                @include spacing(1rem 1.4rem, unset);
+                background-color: $white;
                 box-shadow: $search-shadow;
-                padding: 1.4rem 4rem;
 
                 &::placeholder {
-                    color: $silver-neutral;
-                    font-size: 2rem;
+                    color: $silver;
+                    font-size: 1.4rem;
                 }
             }
 
             .search__button {
-                @include text(1.6rem, $regular, $silver-neutral);
-                background-color: $secondary;
-                width: 6rem;
-                height: 6rem;
-                border: none;
-                border-radius: .8rem;
+                @include text(1.6rem, $regular, $silver);
+                @include border(none, none, 8px);
+                @include size (4rem, 4rem);
+                background-color: $white;
                 box-shadow: $search-shadow;
 
                 .search__icon {
-                    width: 2.4rem;
+                    @include size (2rem, 2rem);
                 }
             }
         }
 
+        .search__error {
+            @include text (1.6rem, $medium, $error);
+            @include spacing (0 2rem, unset);
+            text-align: center;
+        }
+
+        .--visible{
+            display: block;
+        }
+    }
+
+    main {
+        @include size (100%, fit-content);
+        @include border (none, none, 4rem);
+        @include spacing (4rem 2rem, 4rem 0 0 0);
+        background-color: rgba($color: $primary, $alpha: 0.75);
+        box-shadow: $background-shadow;
+        // max-width: 64rem;
+        // max-height: 73.8rem;
+
         .weather {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            @include display (flex, row, wrap, normal, center, normal);
 
             .weather__localization {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                column-gap: 2rem;
-                width: 100%;
-                margin: 3.6rem 0;
+                @include display(flex, row, wrap, normal, center, center);
+                @include size(100%, fit-content);
+                column-gap: 1rem;
 
                 .weather__icon {
-                    height: 4rem
+                    @include size (fit-content, 2rem)
                 }
 
                 .weather__city {
-                    @include text (4rem, $bold, $quaternary);
+                    @include text (2rem, $bold, $dark);
                 }
             }
 
             .weather__temperature {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                margin-bottom: 4.8rem;
+                @include display(flex, column, nowrap, normal, normal, center);
+                @include size (100%, fit-content);
+                @include spacing(unset, 1rem 0 4rem);
 
 
                 .temperature__degrees {
-                    @include text (8rem, $bold, $quaternary);
+                    @include text (8rem, $bold, $dark);
+                    @include spacing(unset, 1rem 0)
                 }
 
                 .weather__condition {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    align-items: center;
-                    column-gap: 2rem;
+                    @include display (flex, row, wrap, normal, center, center);
+                    column-gap: 1rem;
 
                     .condition__icon {
-                        width: 8rem
+                        @include size (6rem, fit-content);
                     }
 
                     .condition__text {
-                        @include text (2.8rem, $bold, $quaternary);
+                        @include text (2rem, $bold, $dark);
                         text-align: center;
                     }
                 }
             }
 
             .weather__features {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
+                @include display (flex, column, nowrap, normal, center, center);
+                @include size(100%, fit-content);
 
                 hr {
-                    width: 100%;
-                    border: 2px solid $tertiary;
-                    margin: unset;
-                    padding: unset;
+                    @include size(100%, fit-content);
+                    @include spacing(unset, unset);
+                    border: 1px solid $dark;
                 }
 
                 .weather__climate {
-                    display: flex;
-                    justify-content: space-between;
-                    width: 100%;
-                    padding: 1.2rem 0;
+                    @include display (flex, row, wrap, normal, space-between, normal);
+                    @include size (100%, fit-content);
+                    @include spacing (8px 0, unset)
                 }
 
                 .weather__text {
-                    @include text (2.8rem, $bold, $quaternary);
+                    @include text (2rem, $bold, $dark);
                 }
             }
         }
+    }
 
-        .--hidden {
-            display: none;
-        }
+    .--hidden {
+        display: none;
     }
 }
