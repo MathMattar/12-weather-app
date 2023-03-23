@@ -3,7 +3,7 @@ const unsplashAccessKey = "TYC5m71jdzqgxle6K4-NyAzfzDasUbL-tSO33BjQNX8";
 
 export async function getCoordinates(city) {
   const geocodingAPI = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${weatherAccessKey}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${weatherAccessKey}`
   );
 
   const data = await geocodingAPI.json();
