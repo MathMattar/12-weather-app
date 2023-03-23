@@ -10,7 +10,7 @@ form.addEventListener("submit", async (e) => {
   const city = input.value;
   const cityData = await getCoordinates(city);
   const weather = await getWeather(cityData.lat, cityData.lon);
-  const images = await getCityImage(city); // Adicione esta linha para definir a variável images
+  const images = await getCityImage(city);
   showElement(weather);
   showCityImages(images);
   container.classList.remove("--hidden");
