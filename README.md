@@ -31,7 +31,6 @@ Este é um aplicativo de previsão do tempo que permite que o usuário obtenha i
     <img width="1440px" src="./assets/presentation/desktop-active.png"></img>
 </p>
 
-
 <br/>
 
 ## Links
@@ -112,7 +111,11 @@ export async function getCoordinates(city) {
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](<https://www.linkedin.com/in/mathewsmattar/>)
-[![Email](https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white)](<mailto:mathmattar@hotmail.com>)
+<a hrf="https://www.linkedin.com/in/mathewsmattar/" target="_blank">
+  <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mathewsmattar/">
+</a>
+<a hrf="mailto:mathmattar@hotmail.com" target="_blank">
+  <img src="https://img.shields.io/badge/Microsoft_Outlook-0078D4?style=for-the-badge&logo=microsoft-outlook&logoColor=white">
+</a>
 
 </div>
