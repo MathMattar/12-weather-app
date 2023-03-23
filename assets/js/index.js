@@ -1,5 +1,5 @@
-import { getCoordinates, getWeather } from "./connectAPI.js";
-import { showElement } from "./showElements.js";
+import { getCoordinates, getWeather, getCityImage } from "./connectAPI.js";
+import { showElement, showCityImages } from "./showElements.js";
 
 const form = document.getElementById("search-form");
 const input = document.getElementById("search-input");
@@ -10,7 +10,8 @@ form.addEventListener("submit", async (e) => {
   const city = input.value;
   const cityData = await getCoordinates(city);
   const weather = await getWeather(cityData.lat, cityData.lon);
+  const images = await getCityImage(city); // Adicione esta linha para definir a variável images
   showElement(weather);
-
+  showCityImages(images);
   container.classList.remove("--hidden");
 });
