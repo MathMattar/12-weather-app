@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <main>
+    <header>
         <form class="search" id="search-form">
             <input type="search" class="search__area" id="search-input" aria-label="Campo para buscar cidade"
                 placeholder="Digite o nome da cidade" required>
@@ -30,7 +30,10 @@
                 <img src="./assets/images/search-icon.svg" alt="" class="search__icon">
             </button>
         </form>
-        <section class="weather --hidden" id="weather-container">
+        <span class="search__error" id="search-error"></span>
+    </header>
+    <main class="--hidden" id="weather-container">
+        <section class="weather">
             <div class="weather__localization">
                 <img src="./assets/images/location.svg" class="weather__icon" alt="">
                 <h2 class="weather__city" id="weather-city"></h2>
@@ -69,7 +72,6 @@
     </main>
 
     <script src="./assets/js/index.js" type="module"></script>
-
 
 </body>
 
