@@ -1,8 +1,9 @@
-const keyAPI = "15da00e4020f8892093e6b24c1c4b5a5";
+const weatherAccessKey = "15da00e4020f8892093e6b24c1c4b5a5";
+const unsplashAccessKey = "TYC5m71jdzqgxle6K4-NyAzfzDasUbL-tSO33BjQNX8";
 
 export async function getCoordinates(city) {
   const geocodingAPI = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${keyAPI}`
+    `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${weatherAccessKey}`
   );
 
   const data = await geocodingAPI.json();
@@ -19,7 +20,7 @@ export async function getCoordinates(city) {
 
 export async function getWeather(lat, lon) {
   const weatherAPI = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${keyAPI}&lang=pt_br`
+    `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${weatherAccessKey}&lang=pt_br`
   );
 
   const data = await weatherAPI.json();
@@ -35,4 +36,14 @@ export async function getWeather(lat, lon) {
   };
 
   return weatherData;
+}
+
+export async function getCityImage(city) {
+  const unsplashAPI = await fetch(
+    `https://api.unsplash.com/search/photos?query=${city}&client_id=${unsplashAccessKey}`
+  );
+
+  const data = await unsplashAPI.json();
+
+  return data.results;
 }
