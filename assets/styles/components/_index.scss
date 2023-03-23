@@ -1,7 +1,7 @@
 @import '../abstract/root';
 
 body {
-    @include display(flex, row, wrap, flex-start, center, normal);
+    @include display(flex, column, nowrap, normal, center, center);
     @include size (100%, 100vh);
     @include spacing(6rem 2rem, unset);
     background: linear-gradient($gradient) fixed;
@@ -9,6 +9,7 @@ body {
 
     header {
         @include size (100%, fit-content);
+        max-width: 64rem;
 
         .search {
             @include display (flex, row, nowrap, normal, space-between, center);
@@ -49,7 +50,7 @@ body {
             text-align: center;
         }
 
-        .--visible{
+        .--visible {
             display: block;
         }
     }
@@ -60,8 +61,7 @@ body {
         @include spacing (4rem 2rem, 4rem 0 0 0);
         background-color: rgba($color: $primary, $alpha: 0.75);
         box-shadow: $background-shadow;
-        // max-width: 64rem;
-        // max-height: 73.8rem;
+        max-width: 40rem;
 
         .weather {
             @include display (flex, row, wrap, normal, center, normal);
