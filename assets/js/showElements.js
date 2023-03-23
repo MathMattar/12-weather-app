@@ -21,3 +21,14 @@ export function showElement(weatherData) {
   showHumidity.innerHTML = `${Math.round(weatherData.humidity)}%`;
   showWind.innerHTML = `${windInKmH} km/h`;
 }
+
+export function showCityImages(images) {
+  const image = images[0];
+  const imageUrl = image.urls.regular;
+
+  document.body.style.backgroundImage = `url(${imageUrl})`;
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center center";
+}
+
+
