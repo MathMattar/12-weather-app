@@ -7,6 +7,36 @@
     color: $color;
 }
 
+@mixin border ($border, $outline, $radius) {
+    border: $border;
+    outline: $outline;
+    border-radius: $radius;
+}
+
+@mixin size ($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin spacing ($padding, $margin) {
+    padding: $padding;
+    margin: $margin;
+}
+
+@mixin display ($display, $flex-direction, $flex-wrap, $align-content, $justify-content, $align-items) {
+    display: $display;
+    flex-direction: $flex-direction ;
+    flex-wrap: $flex-wrap ;
+    align-content: $align-content ;
+    justify-content: $justify-content ;
+    align-items: $align-items ;
+}
+
+//border
+$border: none;
+$outline: none;
+$radius: .8rem;
+
 // shadow
 $search-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
 $background-shadow: inset 0px 0px 12px 0px rgba(0, 0, 0, 0.25);
@@ -17,13 +47,11 @@ $medium: 500;
 $bold: 700;
 
 // colors 
-$dark-neutral: #000000;
-$silver-neutral: #909090;
-$light-neutral: #FEFEFE;
 $primary: #E3FDFD;
-$secondary: #CBF1F5;
-$tertiary: #A6E3E9;
-$quaternary: #71C9CE;
+$white: #FEFEFE;
+$dark: #404040;
+$silver: #909090;
+$error: #DD0004;
 
 $gradient: (
     to bottom,
